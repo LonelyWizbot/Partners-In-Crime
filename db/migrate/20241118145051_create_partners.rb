@@ -4,7 +4,7 @@ class CreatePartners < ActiveRecord::Migration[7.1]
       t.string :title
       t.text :description
       t.string :image
-      t.integer :status
+      t.boolean :status, default: true
       t.float :price
       t.references :user, null: false, foreign_key: true
 
