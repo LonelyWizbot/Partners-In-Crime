@@ -1,39 +1,64 @@
 <div class="container mt-4">
-  <div class="row">
-    <div class="col-8 bg-white p-4">
-      <div class="flat-show-card">
-        <h1><%#= @partner.title %>Title</h1>
+
+  <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" style= "background-image: url('<%= @partner.image%>'); background-size: 100% 100%">
+      <div class="carousel-item active">
+        <%= image_tag @partner.image, alt: "Le Wagon", width: 400, class:"image-centrale" %>
       </div>
-      <div class="flat-show-card">
-        <h3>A bit more about this partner...</h3>
-        <p><%#= @partner.description %>Description</p>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1698376621004-70ce754157d1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9ybWF0JTIwcmVjdGFuZ3VsYWlyZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Second Slide" width = 400 height = 400>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag @partner.image, alt: "Le Wagon", width: 400, class:"image-centrale" %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <div class="row">
+    <div class="col-8 bg-white p-4 mt-4 d-flex align-items-center">
+      <div class="flat-show-card ms-3 ">
+        <h1 class="fw-bold pb-4 border-bottom"><%= @partner.title%></h1>
+        <h3 class="title-purple mt-4">A bit more about this partner...</h3>
+        <p class="mt-2"><%= @partner.description %></p>
       </div>
     </div>
 
-    <div class="col-4 bg-white p-4">
-      <div class="flat-show-card">
-        <h5>Partner up!</h5>
-
-        <form action="">
-          <div class="input-group">
-            <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form>
-      </div>
-      <div class="flat-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            75€/day <%#= @partners.price %>
+    <div class="col-4 bg-white p-4 mt-4">
+      <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-body p-4">
+          <h5 class="card-title fw-bold mb-3" style="font-size: 2rem; color: #333;">Partner up!</h5>
+            <div class="mt-4">
+              <form action="">
+                <div class="input-group">
+                  <span class="input-group-text" id="start-date-label">From:</span>
+                  <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+                </div>
+                <div class="input-group mt-2">
+                  <span class="input-group-text" id="end-date-label">To:</span>
+                  <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+                </div>
+                <input type="submit" value="Book" class="button-form" style="width: 100%">
+              </form>
+            </div>
+              <div class="flat-show-card mt-4 border-top">
+                <h3 class="fw-bold mt-3">Details</h3>
+                <div class="flex">
+                  <div class="flex">
+                    <p><%= @partner.price.to_i %>€ / day</p>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
