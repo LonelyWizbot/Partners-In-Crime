@@ -9,11 +9,9 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, presence: true
-  validates :encrypted_password, presence: true
   validates :address, presence: true
   validates :zip_code, presence: true
   validates :city, presence: true
-  validates :country, presence: true
-  validates :phone_number, numericality: true, length: { minimum: 10, maximum: 10 }
+  # validates :first_name, :last_name, :address, :zip_code, :city, presence: true
+  validates :phone_number, format: { with: /\A\d{10}\z/, message: "must be exactly 10 digits" }
 end

@@ -3,6 +3,7 @@ class PartnersController < ApplicationController
 
   def index
     @partners = Partner.all
+    redirect_to root_path
   end
 
   def new
