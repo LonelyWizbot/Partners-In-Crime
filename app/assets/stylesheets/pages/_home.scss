@@ -2,3 +2,47 @@
 .home {
   height: 90vh;
 }
+
+#replace-me {
+  color: #4353FF;
+}
+
+
+#replace-me:after {
+  content: "";
+  animation: spin 20s linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  0% {
+    content: "d'aller en partiel";
+  }
+  25% {
+    content: "d'aider Alex à déménager";
+  }
+  50% {
+    content: "vous rendre à l’enterrement de Patrick";
+  }
+  75% {
+    content: "vous rendre à l’enterrement de Patrick";
+  }
+  100% {
+    content: "se rendre au 96ᵉ anniversaire de votre grande-tante";
+  }
+}
+
+.orange {
+  color:#ff8709;
+  background: none;
+}
+
+.demo {
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: left;
+  height: 100vh;
+
+}
