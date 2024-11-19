@@ -1,0 +1,41 @@
+#customCarousel .carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+.carousel-item {
+  flex: 0 0 60%; /* Adjusts the visible width of each image */
+  margin: 0 10px; /* Spacing between images */
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.custom-img {
+  object-fit: cover;
+  border-radius: 10px; /* Rounded corners for a better effect */
+}
+.carousel-item.active .custom-img {
+  transform: scale(1.1); /* Center image slightly larger */
+}
+.carousel-item:not(.active) .custom-img.blurred {
+  filter: blur(8px); /* Blurs side images */
+  opacity: 0.6; /* Adds a slight transparency */
+}
+.carousel-item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;/* Center image slightly larger */
+}
+.button-form {
+  background-color: #B197FC;
+  color: white;
+  border:#B197FC;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.title-purple {
+  color:#B197FC;
+}
