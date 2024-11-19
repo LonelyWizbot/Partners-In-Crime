@@ -3,16 +3,12 @@
   height: 90vh;
 }
 
-#replace-me {
-  color: #4353FF;
-}
-
 
 #replace-me:after {
   content: "";
   animation: spin 20s linear;
   animation-iteration-count: infinite;
-  animation-direction: normal;
+  animation-direction: alternate;
   animation-play-state: running;
 }
 
@@ -32,17 +28,4 @@
   100% {
     content: "se rendre au 96ᵉ anniversaire de votre grande-tante";
   }
-}
-
-.orange {
-  color:#ff8709;
-  background: none;
-}
-
-.demo {
-  padding: 2rem;
-  font-size: 1.5rem;
-  text-align: left;
-  height: 100vh;
-
 }
