@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row gap-3 d-flex flex-nowrap">
+
+    <div class="col-6 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+      <div class="d-flex justify-content-between">
+        <div>
+     <img src="https://i.pinimg.com/474x/af/3f/c0/af3fc09e6998549d9902f8ff13d093aa.jpg" alt="Second Slide" width = 100 height = 100 class="rounded-circle">
+        </div>
+        <div>
+      <p><strong>Name: </strong><%= current_user.first_name %> <%= current_user.last_name %></p> <br>
+      <p><strong>Address: </strong><%= current_user.address %>, <%= current_user.additional_address %> <br>
+                                   <%= current_user.zip_code %>, <%= current_user.city %></p>
+      <p><strong>E-mail: </strong><%= current_user.email %></p> <br>
+      <p><strong>Phone: </strong><%= current_user.phone_number %></p> <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+
+    </div>
+
+    <div class="col-3 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+
+    </div>
+
+  </div>
+
+  <div class="row gap-3 d-flex flex-nowrap">
+
+    <div class="col-6 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+
+    </div>
+
+    <div class="col-6 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+
+    </div>
+
+  </div>
+
+</div>
