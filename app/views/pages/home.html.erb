@@ -12,15 +12,18 @@
   </div>
   <div id="partners" class="row vh-100">
 
-  <div class="row gap-3 d-flex flex-nowrap">
-    <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+<div class="container">
+  <div class="row gap-3 d-flex justify-content-center">
+    <% @partners.each do |partner| %>
+      <div class="col-lg-3 col-md-6 col-12 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg"
+           style="border-radius: 32px; height: 300px; background-image: url('<%= partner.image %>')">
+           <%= partner.title %>
+      </div>
+    <% end %>
   </div>
-  <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
-    </div>
-  <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
-    </div>
-  </div>
+</div>
 
+  </div>
   </div>
 </div>
 <%# <span id="replace-me"></span>. %>
