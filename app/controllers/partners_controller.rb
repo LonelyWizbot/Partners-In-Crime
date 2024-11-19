@@ -6,6 +6,10 @@ class PartnersController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @partner = Partner.find(params[:id])
+  end
+
   def new
     @partner = Partner.new
   end
