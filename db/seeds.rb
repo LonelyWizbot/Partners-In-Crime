@@ -82,7 +82,7 @@ Partner.create!(title: "Double Parfait pour l’Open Space",
                 price: 150,
                 user_id: users.sample.id)
 
-Partner.create!(title: "Éclaireur de Date : Je ratisse avant que tu n'investisses",
+Partner.create!(title: "Éclaireur de Date",
                 description: "Envie de filtrer les rencards foireux sans risquer ta soirée? J’y vais à ta place!
                               Je scrute les signes d'alerte : discours bizarre, longues histoires d’ex, et poils suspects.
                               Je gère les discussions gênantes et les silences longs pour te dire si ça vaut le coup.
