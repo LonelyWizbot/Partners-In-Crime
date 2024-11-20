@@ -36,10 +36,10 @@
         <%= image_tag @partner.image, alt: "Le Wagon", width: 400, class:"image-centrale" %>
       </div>
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1515168985652-8454bcc8fcaf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHNhbGxlJTIwZGUlMjBzcGVjdGFjbGV8ZW58MHx8MHx8fDI%3D" alt="Second Slide" width=400 height=400>
+        <img src="https://i.pinimg.com/control2/474x/73/c6/6a/73c66aaa605393d02c668889836aba34.jpg" alt="Second Slide" width=400 height=400>
       </div>
       <div class="carousel-item">
-        <img src="https://i.pinimg.com/474x/55/b3/78/55b378701e9e673b85d395a30709fea4.jpg" alt="Second Slide" width=400 height=400>
+        <img src="https://i.pinimg.com/474x/ca/10/42/ca10425bd76226d1e166813edae18d04.jpg" alt="Second Slide" width=400 height=400>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
@@ -74,7 +74,7 @@
                           as: :string,
                           input_html: { data: { controller: "datepicker", calcul_dates_target: "startDate",
                               action: "input->calcul-dates#select" } } %>
-              <%= f.input :end_date, label:"Date de début fin",
+              <%= f.input :end_date, label:"Date de fin",
                           as: :string,
                           input_html: { data: { controller: "datepicker", calcul_dates_target: "endDate",
                               action: "input->calcul-dates#select" } } %>
@@ -100,11 +100,6 @@
         <div class="border-top mt-3 pt-3 d-flex justify-content-between">
           <h5 class="fw-bold">Total</h5>
             <p data-calcul-dates-target="pricing">0€</p>
-          <p> 300€ x 2 jours</p>
-        </div>
-        <div class="border-top mt-3 pt-3 d-flex justify-content-between">
-          <h5 class="fw-bold">Total</h5>
-            <p>600€</p>
         </div>
       </div>
     </div>
