@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @dashboard = @booking.dashboard
