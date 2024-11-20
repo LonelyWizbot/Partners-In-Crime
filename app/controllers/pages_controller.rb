@@ -6,8 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @partners = Partner.where(user_id: current_user)
   end
-
-  private
-
 end

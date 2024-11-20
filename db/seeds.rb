@@ -25,7 +25,7 @@ users = []
   users << User.create!(first_name: Faker::Name.first_name,
                         last_name: Faker::Name.last_name,
                         email: Faker::Internet.email,
-                        password: Faker::Internet.password(min_length: 6),
+                        password: "azerty",
                         address: Faker::Address.street_address,
                         additional_address: Faker::Address.secondary_address,
                         zip_code: Faker::Address.zip_code,
@@ -82,7 +82,7 @@ Partner.create!(title: "Double Parfait pour l’Open Space",
                 price: 150,
                 user_id: users.sample.id)
 
-Partner.create!(title: "Éclaireur de Date : Je ratisse avant que tu n'investisses",
+Partner.create!(title: "Éclaireur de Date",
                 description: "Envie de filtrer les rencards foireux sans risquer ta soirée? J’y vais à ta place!
                               Je scrute les signes d'alerte : discours bizarre, longues histoires d’ex, et poils suspects.
                               Je gère les discussions gênantes et les silences longs pour te dire si ça vaut le coup.
