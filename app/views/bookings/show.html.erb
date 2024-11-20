@@ -31,9 +31,9 @@
       <p>
         <strong>Prix total:</strong> <%= @booking.partner.price %>€ x
         <%= (@booking.end_date - @booking.start_date).to_i %> jours =
-        <strong> <%= @booking.partner.price.to_i * (@booking.end_date - @booking.start_date) %>€ </strong>
+        <strong> <%= (@booking.partner.price * (@booking.end_date - @booking.start_date)).to_i %>€ </strong>
       </p>
-      <p><strong>Statut:</strong><%= @booking.status %></p>
+      <p><strong>Statut: </strong><%= @booking.status %></p>
     </div>
   </div>
 
