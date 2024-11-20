@@ -27,6 +27,6 @@ class PartnersController < ApplicationController
   private
 
   def strong_params
-    params_require(:partner).permit(:title, :description, :image, :price)
+    params.require(:partner).permit(:title, :description, :image, :price)
   end
 end
