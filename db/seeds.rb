@@ -25,7 +25,7 @@ users = []
   users << User.create!(first_name: Faker::Name.first_name,
                         last_name: Faker::Name.last_name,
                         email: Faker::Internet.email,
-                        password: Faker::Internet.password(min_length: 6),
+                        password: "azerty",
                         address: Faker::Address.street_address,
                         additional_address: Faker::Address.secondary_address,
                         zip_code: Faker::Address.zip_code,

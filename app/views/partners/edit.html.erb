@@ -1,0 +1,20 @@
+<%= simple_form_for(partner) do |f| %>
+  <div class="card shadow border-0 rounded-lg p-4">
+    <div class="mb-3">
+      <%= f.input :title, input_html: { class: 'form-control shadow-sm rounded' } %>
+    </div>
+    <div class="mb-3">
+      <%= f.input :description, input_html: { class: 'form-control shadow-sm rounded' } %>
+    </div>
+    <div class="mb-3">
+      <%= f.input :image, as: :file %>
+    </div>
+    <div class="mb-3">
+      <%= f.input :price, input_html: { class: 'form-control shadow-sm rounded' } %>
+    </div>
+    <div class="d-flex justify-content-end mt-4">
+      <%= link_to "Annuler", partners_path, class: "btn shadow-sm rounded-pill px-4 me-2", style: "background-color: #6C757D; color: white;" %>
+      <%= f.submit 'Confirmer', class: 'btn shadow-sm rounded-pill px-4', style: 'background-color: #B197FC; color: white;' %>
+    </div>
+  </div>
+<% end %>
