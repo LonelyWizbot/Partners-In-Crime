@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 .home {
   height: 90vh;
-
 }
 
 #replace-me:after {
@@ -28,4 +27,11 @@
   100% {
     content: "de vous rendre au 96ᵉ anniversaire de votre grande-tante";
   }
+}
+
+.title {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
 }
