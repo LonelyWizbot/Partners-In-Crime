@@ -31,15 +31,15 @@
 <div class="container mt-4">
   <!-- Carousel Section -->
   <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" style="background-image: url('https://media.istockphoto.com/id/1169376905/fr/photo/fond-brouill%C3%A9-de-ville.jpg?s=612x612&w=0&k=20&c=AlBXbQXVZBlRcj8Bl-aW2KD6qyLE8WdpTt-HOAB6zMs='); background-size: 100% 100%">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <%= image_tag @partner.image, alt: "Le Wagon", width: 400, class:"image-centrale" %>
       </div>
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1698376621004-70ce754157d1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9ybWF0JTIwcmVjdGFuZ3VsYWlyZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Second Slide" width=400 height=400>
+        <img src="https://images.unsplash.com/photo-1515168985652-8454bcc8fcaf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHNhbGxlJTIwZGUlMjBzcGVjdGFjbGV8ZW58MHx8MHx8fDI%3D" alt="Second Slide" width=400 height=400>
       </div>
       <div class="carousel-item">
-        <%= image_tag @partner.image, alt: "Le Wagon", width: 400, class:"image-centrale" %>
+        <img src="https://i.pinimg.com/474x/55/b3/78/55b378701e9e673b85d395a30709fea4.jpg" alt="Second Slide" width=400 height=400>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
@@ -64,18 +64,20 @@
     </div>
 
     <!-- Partner Up Card -->
-    <div class="partner-up-card">
+    <div class="partner-up-card" data-controller="calcul-dates">
       <div class="card-body">
         <h5 class="card-title fw-bold mb-3">Partner up!</h5>
         <div class="mt-4">
           <%= simple_form_for ([@partner, @booking]) do |f|%>
             <div class="form-input">
-              <%= f.input :start_date,
+              <%= f.input :start_date, label:"Date de début",
                           as: :string,
-                          input_html: { data: { controller: "datepicker" } } %>
-              <%= f.input :end_date,
+                          input_html: { data: { controller: "datepicker", calcul_dates_target: "startDate",
+                              action: "input->calcul-dates#select" } } %>
+              <%= f.input :end_date, label:"Date de début fin",
                           as: :string,
-                          input_html: { data: { controller: "datepicker" } } %>
+                          input_html: { data: { controller: "datepicker", calcul_dates_target: "endDate",
+                              action: "input->calcul-dates#select" } } %>
             </div>
 
             <div class="form-input-message">
@@ -83,18 +85,21 @@
             </div>
 
             <div class="form-actions">
-             <%= f.button :submit, class:"button-form"%>
+             <%= f.button :submit, value:"Réserver mon Partner", class:"button-form w-100"%>
             </div>
           <% end %>
         </div>
 
         <div class="flat-show-card d-flex justify-content-between">
           <h5 class="fw-bold">Détail</h5>
-          <p> 200€ x 2 jours</p>
+          <div class="d-flex gap-1">
+            <p data-calcul-dates-target="fixedPrice"><%= @partner.price.to_i %>€ x</p>
+            <p data-calcul-dates-target="totalDate"> 0 jour</p>
+          </div>
         </div>
         <div class="border-top mt-3 pt-3 d-flex justify-content-between">
           <h5 class="fw-bold">Total</h5>
-            <p>400€</p>
+            <p data-calcul-dates-target="pricing">0€</p>
         </div>
       </div>
     </div>
