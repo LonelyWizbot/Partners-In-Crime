@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg d-flex align-items-center">
   <div class="container-fluid">
-    
+
     <a class="navbar-brand" href="<%= root_path %>">
       <h5>Partners In Crime</h5>
     </a>
@@ -12,7 +12,6 @@
 
 
     <div class="collapse navbar-collapse" id="navbarContent">
-
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
         <li class="nav-item">
           <a class="nav-link" href="<%= root_path %>"><h4>Accueil</h4></a>
@@ -25,11 +24,25 @@
         </li>
       </ul>
 
-
-      <div class="d-flex">
-        <a class="btn btn-sign me-2" href="<%= new_user_registration_path %>">Sign up</a>
-        <a class="btn btn-login" href="<%= new_user_session_path %>">Log in</a>
-      </div>
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </button>
+          <ul class="dropdown-menu" style="width: 5px;">
+            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+            <li><%= link_to "Logout",
+                        destroy_user_session_path,
+                        data: { turbo_method: :delete},
+                        class: "dropdown-item" %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="d-flex">
+          <a class="btn btn-sign me-2" href="<%= new_user_registration_path %>">Sign up</a>
+          <a class="btn btn-login" href="<%= new_user_session_path %>">Log in</a>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
