@@ -1,12 +1,13 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
+
+    @partner = Partner.find(params[:partner_id])
+    @user = current_user
+    @booking.partner = @partner
+    @booking.user = @user
     if @booking.save
-      redirect dashboard_path(@booking)
+      redirect_to partner_booking_path(@partner, @booking)
     else
       render :new, status: :unprocessable_entity
     end
