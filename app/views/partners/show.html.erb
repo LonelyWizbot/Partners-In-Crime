@@ -37,24 +37,28 @@
         <div class="card-body p-4">
           <h5 class="card-title fw-bold mb-3" style="font-size: 2rem; color: #333;">Partner up!</h5>
             <div class="mt-4">
-              <form action="">
-                <div class="input-group">
-                  <span class="input-group-text" id="start-date-label">From:</span>
-                  <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+              <%= simple_form_for ([@partner, @booking]) do |f|%>
+                <div class="form-input">
+                  <%= f.input :start_date,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } } %>
+                  <%= f.input :end_date,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" } } %>
                 </div>
-                <div class="input-group mt-2">
-                  <span class="input-group-text" id="end-date-label">To:</span>
-                  <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+                <div class="form-actions">
+                 <%= f.button :submit, class:"button-form"%>
                 </div>
-                <input type="submit" value="Book" class="button-form" style="width: 100%">
-              </form>
+              <% end %>
             </div>
-              <div class="flat-show-card mt-4 border-top">
-                <h3 class="fw-bold mt-3">Details</h3>
-                <div class="flex">
-                  <div class="flex">
-                    <p><%= @partner.price.to_i %>€ / day</p>
-                  </div>
+              <div class="flat-show-card d-flex justify-content-between mt-3">
+                <h5 class="fw-bold mt-3">Détail</h5>
+
+              </div>
+              <div class="flat-show-card d-flex justify-content-between border-top">
+                <h5 class="fw-bold mt-3">Total</h5>
+                <div class="flex mt-3">
+ 
                 </div>
               </div>
           </div>

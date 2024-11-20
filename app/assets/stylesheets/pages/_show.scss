@@ -33,9 +33,12 @@
   color: white;
   border:#B197FC;
   margin-top: 8px;
-  border-radius: 4px;
+  border-radius: 32px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
+.button-form:hover {
+  background-color: #d6c9ff;
+}
 .title-purple {
   color:#B197FC;
 }
