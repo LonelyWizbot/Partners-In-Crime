@@ -46,21 +46,29 @@
                               as: :string,
                               input_html: { data: { controller: "datepicker" } } %>
                 </div>
+
+                <div class="form-input-message">
+                   <%= f.input :message, as: :text %>
+                </div>
+
+
                 <div class="form-actions">
                  <%= f.button :submit, class:"button-form"%>
                 </div>
               <% end %>
             </div>
+
               <div class="flat-show-card d-flex justify-content-between mt-3">
                 <h5 class="fw-bold mt-3">Détail</h5>
-
               </div>
+
               <div class="flat-show-card d-flex justify-content-between border-top">
                 <h5 class="fw-bold mt-3">Total</h5>
                 <div class="flex mt-3">
- 
+                  <p><%= @partner.price.to_i %>€</p>
                 </div>
               </div>
+
           </div>
         </div>
       </div>
