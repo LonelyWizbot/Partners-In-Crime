@@ -4,14 +4,17 @@
     <h1>Demande de réservation</h1>
   </div>
 
-  <div class="container bg-white p-4 mb-3 d-flex flex-column flex-md-row card shadow border-0 rounded-lg" style="border-radius: 32px; min-height: 275px;">
+  <div class="container bg-white p-4 mb-4 d-flex flex-column flex-md-row card shadow border-0 rounded-lg" style="border-radius: 32px; height: 275px;">
     <div class="w-100 w-md-50 mb-3 mb-md-0">
-      <h3 class="mb-4">Partenaire</h3>
+      <h3 class="mb-4"><%= @booking.partner.title %></h3>
       <div class="d-flex align-items-start">
         <div>
-          <%= image_tag @booking.partner.image, alt: "Le Wagon", class: "img-fluid", style: "border-radius: 16px; width: 150px; height: 150px; object-fit: cover;" %>
+          <%= image_tag @booking.partner.image, alt: "Le Wagon", class: "img-fluid shadow", style: "border-radius: 16px; width: 150px; height: 150px; object-fit: cover;" %>
         </div>
         <div class="ms-4">
+          <div>
+            <strong>Demandeur : </strong><%= @booking.user.first_name %> <%= @booking.user.last_name %>
+          </div>
           <div>
             <strong>Message de la réservation:</strong>
           </div>
@@ -23,7 +26,7 @@
     </div>
   </div>
 
-  <div class="container bg-white p-4 card shadow border-0 rounded-lg" style="border-radius: 32px; min-height: 250px;">
+  <div class="container bg-white p-4 card shadow border-0 rounded-lg" style="border-radius: 32px; height: 250px;">
     <div class="mb-4">
       <h3 class="mb-4">Vos détails de réservation</h3>
       <p><strong>Date de début:</strong> <%= @booking.start_date %></p>
@@ -33,12 +36,12 @@
         <%= (@booking.end_date - @booking.start_date).to_i %> jours =
         <strong> <%= (@booking.partner.price * (@booking.end_date - @booking.start_date)).to_i %>€ </strong>
       </p>
-      <% if @booking.status = 0 %>
-        <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
-        <% elsif @booking.status = 1 %>
-        <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
+      <% if @booking.status == "accepted" %>
+          <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
+        <% elsif @booking.status == "denied" %>
+          <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
         <% else %>
-        <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
+          <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
       <% end %>
     </div>
   </div>
