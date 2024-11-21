@@ -1,4 +1,17 @@
 .links-form {
-  font-size: 16px;
+  font-size: 14px;
   color: #B197FC;
 }
+
+.links-form:hover {
+  color: #d6c9ff;
+}
+
+#sign-up {
+  display: flex;
+}
+
+#forgot-password {
+  display: flex;
+}
+

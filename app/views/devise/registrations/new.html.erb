@@ -1,22 +1,22 @@
 <div class="container w-50 mt-4 p-4 shadow p-3 mb-5 bg-body rounded" style="background-color: #f8f9fa;">
 
-  <h2>Sign up</h2>
+  <h2 class="text-center">Nouveau client ?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs mt-4">
 
       <div class="d-flex gap-3">
         <div class="col">
-          <%= f.input :first_name,
+          <%= f.input :first_name, label:"Prénom",
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first_name" } %>
         </div>
 
         <div class="col">
-          <%= f.input :last_name,
+          <%= f.input :last_name, label:"Nom",
                       required: true,
                       input_html: { autocomplete: "last_name" } %>
         </div>
@@ -25,32 +25,33 @@
       <%= f.input :email,
                   required: true,
                   input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
+      <%= f.input :password, label:"Mot de passe",
                   required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
+      <%= f.input :password_confirmation, label:"Confirmation du mot de passe",
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :address,
+      <%= f.input :address, label:"Adresse",
                   required: true,
                   input_html: { autocomplete: "address" } %>
-      <%= f.input :zip_code,
+      <%= f.input :zip_code, label:"Code postal",
                   required: true,
                   input_html: { autocomplete: "zip-code" } %>
-      <%= f.input :city,
+      <%= f.input :city, label:"Ville",
                   required: true,
                   input_html: { autocomplete: "city" } %>
-      <%= f.input :phone_number,
+      <%= f.input :phone_number, label:"Numéro de téléphone",
                   input_html: { autocomplete: "phone-number" } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class:"btn-form-log-in" %>
-    </div>
 
-  <% end %>
-  <div class="m-2">
-    <%= render "devise/shared/links" %>
-  </div>
+      <div class="form-actions mt-4 d-flex justify-content-center">
+        <%= f.button :submit, "Créer mon compte", class:"w-50" %>
+      <% end %>
+      </div>
+      <div class="mt-3 d-flex justify-content-center">
+        <%= render "devise/shared/links" %>
+      </div>
+
 </div>
