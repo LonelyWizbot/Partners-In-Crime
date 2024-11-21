@@ -4,3 +4,27 @@
   right: 16px;
   z-index: 1000;
 }
+
+.pending_alert {
+  color: white;
+  background-color: #fd7e14;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px #e4751a;
+}
+
+.accepted_alert {
+  color: white;
+  background-color: #198754;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px #16774a;
+}
+
+.denied_alert {
+  color: white;
+  background-color: #dc3545;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px #b62c39;
+}

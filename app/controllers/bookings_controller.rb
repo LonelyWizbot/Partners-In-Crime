@@ -6,10 +6,11 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.partner = @partner
     @booking.user = @user
+
     if @booking.save
       redirect_to partner_booking_path(@partner, @booking)
     else
-      render :new, status: :unprocessable_entity
+      render 'partners/show', status: :unprocessable_entity
     end
   end
 
