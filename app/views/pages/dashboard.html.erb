@@ -4,7 +4,7 @@
 
     <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center flex-md-row card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
       <div class="w-100 w-md-50 mb-3 mb-md-0">
-        <h3 class="mb-4">Votre profil</h3>
+        <h3 class="mb-2">Mon profil</h3>
         <div class="d-flex justify-content-center align-items-center">
           <div>
             <img src="https://i.pinimg.com/474x/af/3f/c0/af3fc09e6998549d9902f8ff13d093aa.jpg" alt="Second Slide" width = 100 height = 100 class="rounded-circle">
@@ -23,7 +23,7 @@
 
       <div class="w-100 w-md-50 mb-3 mb-md-0">
         <div class="d-flex align-items-center justify-content-between ">
-          <div><h3 class="mb-2">Mes profils partenaires</h3></div>
+          <div><h3 class="mb-2">Mes Partners</h3></div>
 
           <div><%= link_to "Créer", new_partner_path(@partner),
                    class: "btn shadow-sm rounded-pill px-3",
@@ -55,9 +55,9 @@
 
     </div>
 
-    <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+    <div class="col-4 bg-white p-4 mt-4 d-flex card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
 
-    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mes demandes de booking</h3>
+    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mes demandes de réservation</h3>
 
     <div class="my-3">
           <div class="scrollable-div pe-3" style="max-height: 200px; overflow-y: scroll;">
@@ -86,11 +86,40 @@
 
   <div class="row gap-3 d-flex flex-nowrap">
 
-    <div class="col-6 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+    <div class="col-6 bg-white p-4 mt-4 d-flex card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+
+    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mon historique de bookings</h3>
+
+    <div class="my-4">
+      <div class="scrollable-div pe-3" style="max-height: 250px; overflow-y: scroll;">
+      <% @booking_requests.each do |booking| %>
+          <div class="d-flex align-items-start justify-content-between mb-3">
+            <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
+            <div><strong><%= booking.start_date %></strong> - <strong><%= booking.end_date %></strong> </div>
+            <div>Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
+            <div><strong>Status:</strong> <%= booking.status %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
     </div>
 
-    <div class="col-6 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+    <div class="col-6 bg-white p-4 mt-4 d-flex card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px">
+
+    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mon historique de partenaires</h3>
+
+    <div class="my-4">
+      <div class="scrollable-div pe-3" style="max-height: 250px; overflow-y: scroll;">
+      <% @accepted_bookings.each do |booking| %>
+          <div class="d-flex align-items-start justify-content-between mb-3">
+            <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
+            <div> du <strong><%= booking.start_date %></strong> au <strong><%= booking.end_date %></strong> </div>
+            <div> Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
     </div>
 
