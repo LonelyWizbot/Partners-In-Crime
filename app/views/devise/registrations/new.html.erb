@@ -11,6 +11,7 @@
         <div class="col">
           <%= f.input :first_name,
                       required: true,
+                      autofocus: true,
                       input_html: { autocomplete: "first_name" } %>
         </div>
 
@@ -23,7 +24,6 @@
 
       <%= f.input :email,
                   required: true,
-                  autofocus: true,
                   input_html: { autocomplete: "email" }%>
       <%= f.input :password,
                   required: true,
