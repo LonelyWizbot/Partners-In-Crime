@@ -1,4 +1,8 @@
-<%= simple_form_for(partner) do |f| %>
+<div class="container w-50 mt-4">
+
+<h1 class="mb-4 fw-bold text-center" style="color: #333;">Créez un nouveau profil partenaire</h1>
+
+<%= simple_form_for(@partner) do |f| %>
   <div class="card shadow border-0 rounded-lg p-4">
     <div class="mb-3">
       <%= f.input :title, input_html: { class: 'form-control shadow-sm rounded' } %>
@@ -13,8 +17,9 @@
       <%= f.input :price, input_html: { class: 'form-control shadow-sm rounded' } %>
     </div>
     <div class="d-flex justify-content-end mt-4">
-      <%= link_to "Cancel", partners_path, class: "btn shadow-sm rounded-pill px-4 me-2", style: "background-color: #6C757D; color: white;" %>
-      <%= f.submit 'Add', class: 'btn shadow-sm rounded-pill px-4', style: 'background-color: #B197FC; color: white;' %>
+      <%= link_to 'Annuler', dashboard_path, class: "btn shadow-sm rounded-pill px-4 me-2", style: "background-color: #cdcdcd; color: white;" %>
+      <%= f.submit 'Créer', class: 'btn shadow-sm rounded-pill px-4', style: 'background-color: #B197FC; color: white;' %>
     </div>
   </div>
 <% end %>
+</div>
