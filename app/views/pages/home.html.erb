@@ -6,9 +6,23 @@
         <p>Welcome!</p>
 
     </div>
-      <div>
-        <a href="#partners" class="btn btn-home">CHECK IT OUT</a>
-      </div>
+    <div class="d-flex">
+        <div class="d-flex" id="btn-discover">
+          <a href="#partners" class="btn btn-home">Découvrez</a>
+        </div>
+        <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+          <div class="input-group" style="width: 500px;">
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Recherchez votre Partner" %>
+            <div class="input-group-append">
+               <a href="#partners" ><%= submit_tag "Rechercher", class: "btn btn-home" %></a>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    </div>
     </div>
   </div>
   <div id="partners" class="row vh-100">

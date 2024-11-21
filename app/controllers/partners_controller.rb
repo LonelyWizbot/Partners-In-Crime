@@ -3,9 +3,7 @@ class PartnersController < ApplicationController
 
   def index
     @partners = Partner.all
-    redirect_to root_path
   end
-
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new

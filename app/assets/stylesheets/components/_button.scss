@@ -25,10 +25,14 @@ a {
 
 .btn-login:hover {
   color: #f8f9fa;
-  background-color: rgba($color: #0d0c22, $alpha: 0.7);
+  background-color: rgba($color: #B197FC, $alpha: 0.7);
 }
 
 .btn-home:hover {
   color: #f8f9fa;
-  background-color: rgba($color: #0d0c22, $alpha: 0.7);
+  background-color: rgba($color: #B197FC, $alpha: 0.7);
+}
+
+#btn-discover {
+  margin-right: 300px;
 }
