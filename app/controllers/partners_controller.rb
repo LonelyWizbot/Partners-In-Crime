@@ -15,11 +15,32 @@ class PartnersController < ApplicationController
 
   def create
     @partner = Partner.new(strong_params)
+    @user = current_user
+    @partner.user = @user
     if @partner.save
-      redirect_to partner_path(@partner)
+      redirect_to dashboard_path(@user)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @partner = Partner.find(params[:id])
+  end
+
+  def update
+    @partner = Partner.find(params[:id])
+    if @partner.update(strong_params)
+      redirect_to dashboard_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @partner = Partner.find(params[:id])
+    @partner.destroy
+    redirect_to dashboard_path(@user)
   end
 
   private
