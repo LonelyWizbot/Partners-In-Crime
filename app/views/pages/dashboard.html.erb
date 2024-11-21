@@ -91,13 +91,19 @@
     <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mon historique de bookings</h3>
 
     <div class="my-4">
-      <div class="scrollable-div pe-3" style="max-height: 250px; overflow-y: scroll;">
+      <div class="scrollable-div pe-3" style="height: 270px; overflow-y: scroll;">
       <% @booking_requests.each do |booking| %>
           <div class="d-flex align-items-start justify-content-between mb-3">
             <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
             <div><strong><%= booking.start_date %></strong> - <strong><%= booking.end_date %></strong> </div>
             <div>Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
-            <div><strong>Status:</strong> <%= booking.status %></div>
+            <% if booking.status == "accepted" %>
+              <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
+            <% elsif booking.status == "denied" %>
+              <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
+            <% else %>
+              <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
+            <% end %>
           </div>
         <% end %>
       </div>
