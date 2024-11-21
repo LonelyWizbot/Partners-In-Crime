@@ -5,9 +5,23 @@
         <h3>Soyons honnêtes, vous avez mieux à faire que... <span id="replace-me" style="color: #b197fc"></span></h3>
         <p>Welcome!</p>
     </div>
-      <div>
-        <a href="#partners" class="btn btn-home">CHECK IT OUT</a>
-      </div>
+    <div class="d-flex">
+        <div class="d-flex" id="btn-discover">
+          <a href="#partners" class="btn btn-home">Découvrez</a>
+        </div>
+        <%= form_with url: partners_path, method: :get, class: "d-flex" do %>
+          <div class="input-group" style="width: 500px;">
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Recherchez votre Partner" %>
+            <div class="input-group-append">
+              <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    </div>
     </div>
   </div>
   <div id="partners" class="row vh-100">

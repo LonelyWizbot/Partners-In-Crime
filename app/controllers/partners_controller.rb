@@ -3,9 +3,10 @@ class PartnersController < ApplicationController
 
   def index
     @partners = Partner.all
-    redirect_to root_path
+    if params[:query].present?
+      @partners = Partner.where(title: params[:query])
+    end
   end
-
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new
