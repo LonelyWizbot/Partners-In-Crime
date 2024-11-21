@@ -1,12 +1,11 @@
-<div class="container">
+<div class="container" data-controller="scroll-search">
   <div class="row">
     <div class="home col d-flex flex-column justify-content-center">
-    <div class="ms-2">
-        <h3>Soyons honnêtes, vous avez mieux à faire que... <span id="replace-me" style="color: #b197fc"></span></h3>
-        <p>Welcome!</p>
-
-    </div>
-    <div class="d-flex">
+      <div class="ms-2">
+          <h3>Soyons honnêtes, vous avez mieux à faire que... <span id="replace-me" style="color: #b197fc"></span></h3>
+          <p>Welcome!</p>
+      </div>
+      <div class="d-flex">
         <div class="d-flex" id="btn-discover">
           <a href="#partners" class="btn btn-home">Découvrez</a>
         </div>
@@ -16,41 +15,40 @@
                 params[:query],
                 class: "form-control",
                 placeholder: "Recherchez votre Partner" %>
-            <div class="input-group-append">
-               <%= submit_tag "Rechercher", class: "btn btn-home" %>
+            <div class="input-group-append" button>
+              <%= submit_tag "Rechercher", class: "btn btn-home", data: { action: "click->scroll-search#scrollToTarget" } %>
             </div>
           </div>
-      <% end %>
-    </div>
-    </div>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div id="partners" class="row vh-100">
 
-<div class="container">
-  <div class="row gap-3 d-flex justify-content-center">
-    <% @partners.each do |partner| %>
-    <div class="col-lg-3 col-md-6 col-12 bg-white align-items-center card shadow m-3" style="border-radius: 32px; height: 430px;">
-        <div class="col-lg-3 col-md-6 col-12 bg-white m-3 d-flex align-items-center card"
-          style="border-color: white; border-radius: 22px; width: 300px; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center;">
-          <%= image_tag partner.image, alt: "Le Wagon", height: 300, width: 300, class: "partner-avatar"  %>
-      </div>
-      <div style="width: 280px">
-      <div>
-        <p class="title"><%= partner.title %></p>
-        <h4 class="price-text" style="color: black;"><%= partner.price.to_i %>€</h4>
-      </div>
-      <div>
-        <a href="<%= partner_path(partner) %>">
-        <button type="button" class="btn-login btn btn-primary btn-sm position-absolute bottom-0 end-0 me-4 mb-3">See more</button>
-        </a>
-      </div>
+  <div id="partners" class="row vh-100" data-scroll-search-target="target">
+    <div class="container">
+      <div class="row gap-3 d-flex justify-content-center">
+        <% @partners.each do |partner| %>
+        <div class="col-lg-3 col-md-6 col-12 bg-white align-items-center card shadow m-3" style="border-radius: 32px; height: 430px;">
+          <div class="col-lg-3 col-md-6 col-12 bg-white m-3 d-flex align-items-center card"
+            style="border-color: white; border-radius: 22px; width: 300px; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <%= image_tag partner.image, alt: "Le Wagon", height: 300, width: 300, class: "partner-avatar"  %>
+          </div>
+          <div style="width: 280px">
+            <div>
+              <p class="title"><%= partner.title %></p>
+              <h4 class="price-text" style="color: black;"><%= partner.price.to_i %>€</h4>
+            </div>
+            <div>
+              <a href="<%= partner_path(partner) %>">
+              <button type="button" class="btn-login btn btn-primary btn-sm position-absolute bottom-0 end-0 me-4 mb-3">See more</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
-</div>
-</div>
-</div>
+
 <%# <span id="replace-me"></span>. %>
