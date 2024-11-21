@@ -4,9 +4,15 @@ class PartnersController < ApplicationController
   def index
     @partners = Partner.all
   end
+
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new
+    @marker = @partner.geocode
+      {
+        latitude: @partner.latitude,
+        longitude: @partner.longitude
+      }
   end
 
   def new
@@ -46,6 +52,6 @@ class PartnersController < ApplicationController
   private
 
   def strong_params
-    params.require(:partner).permit(:title, :description, :image, :price)
+    params.require(:partner).permit(:title, :address, :description, :image, :price, :name)
   end
 end

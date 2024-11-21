@@ -13,3 +13,5 @@ pin "framesync" # @6.1.2
 pin "hey-listen" # @1.0.8
 pin "style-value-types" # @5.1.2
 pin "tslib" # @2.4.0
+pin "mapbox-gl", to: "https://ga.jspm.io/npm:mapbox-gl@3.1.2/dist/mapbox-gl.js"
+pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.1.0/nodelibs/browser/process-production.js"
