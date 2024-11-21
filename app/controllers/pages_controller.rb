@@ -12,5 +12,6 @@ class PagesController < ApplicationController
     @partners = Partner.where(user_id: current_user)
     @bookings = Booking.where(partner_id: @partners.pluck(:id))
     @pending_bookings = @bookings.where(status: 'pending')
+    @accepted_bookings = @bookings.where(status: 'accepted')
   end
 end
