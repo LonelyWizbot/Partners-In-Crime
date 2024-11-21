@@ -54,6 +54,8 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
   border-radius: 10px;
   padding: 1.5rem;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
 .partner-up-card {
@@ -74,4 +76,16 @@ h1 {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+h2 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+p {
+  font-family: "Archivo", sans-serif;
+  text-align: justify;
+  line-height: 40px;
 }

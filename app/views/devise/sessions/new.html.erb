@@ -1,6 +1,6 @@
 <div class="container w-50 mt-4 p-4 shadow p-3 mb-5 bg-body rounded" style="background-color: #f8f9fa;">
 
-  <h2>Déjà client ?</h2>
+  <h2 class="text-center">Déjà client ?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs mt-4">
@@ -14,11 +14,11 @@
       <%= f.input :remember_me, label:"Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
     </div>
 
-
-        <%= f.button :submit, "Se connecter" %>
-
+      <div class="orm-actions mt-2 d-flex justify-content-center">
+        <%= f.button :submit, "Me connecter", class:"w-50" %>
+      </div>
       <% end %>
-    <div class="mt-4 ms-1">
+    <div class="mt-4 ms-1 d-flex align-items-center flex-column">
       <%= render "devise/shared/links" %>
     </div>
     </div>
