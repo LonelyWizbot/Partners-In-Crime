@@ -3,9 +3,6 @@ class PartnersController < ApplicationController
 
   def index
     @partners = Partner.all
-    if params[:query].present?
-      @partners = Partner.where(title: params[:query])
-    end
   end
   def show
     @partner = Partner.find(params[:id])

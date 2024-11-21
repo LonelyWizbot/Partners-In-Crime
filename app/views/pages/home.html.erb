@@ -9,14 +9,14 @@
         <div class="d-flex" id="btn-discover">
           <a href="#partners" class="btn btn-home">Découvrez</a>
         </div>
-        <%= form_with url: partners_path, method: :get, class: "d-flex" do %>
+        <%= form_with url: root_path, method: :get, class: "d-flex" do %>
           <div class="input-group" style="width: 500px;">
             <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
                 placeholder: "Recherchez votre Partner" %>
             <div class="input-group-append">
-              <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+               <a href="#partners" ><%= submit_tag "Rechercher", class: "btn btn-home" %></a>
             </div>
           </div>
       <% end %>
