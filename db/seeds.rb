@@ -43,7 +43,10 @@ partner1 = Partner.new(title: "Gendre idéal",
                 En gros, je suis l'atout parfait pour un événement mémorable.
                 Tes parents se demanderont pourquoi je ne viens pas plus souvent!",
                 price: 200,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Paul Portier",
+                address: "16 Villa Gaudelet, Paris"
+              )
 
 partner2 = Partner.new(title: "Super Mamie",
                 description: "Besoin de quelqu'un pour applaudir à s'en fatiguer les mains et murmurer des 'c'était bien mon chéri'
@@ -52,7 +55,9 @@ partner2 = Partner.new(title: "Super Mamie",
                               Je maîtrise l'art du tricot et du 'tu sais, à mon époque...' pour une immersion totale.
                               Vous allez regretter de ne pas m'avoir eue plus tôt!",
                 price: 150,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Martine Peltier",
+                address: "57 rue de Créqui, Lyon")
 
 partner3 = Partner.new(title: "Candidat à louer",
                 description: "Trop de révisions et pas assez de siestes? Je prends ta place pour ta semaine d'examens!
@@ -60,7 +65,9 @@ partner3 = Partner.new(title: "Candidat à louer",
                               je maîtrise l'art du 'ça passe ou ça casse'. Sourire détendu inclus, même en maths avancées.
                               Tu dors, je stresse : le rêve, non?",
                 price: 100,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Léa Alcou",
+                address: "46 rue de la Rousselle, Bordeaux")
 
 partner4 = Partner.new(title: "Remplaçant de Déménagement",
                 description: "Assez de te coincer le dos à porter le canapé de ton pote ? Laisse-moi faire !
@@ -68,7 +75,9 @@ partner4 = Partner.new(title: "Remplaçant de Déménagement",
                               Cartons, meubles qui ne passent jamais la porte, tout ça, c’est mon job.
                               Toi, tu restes peinard et tu profites de ta journée sans crainte du 'tu m'aides à porter le frigo?'",
                 price: 300,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Mathieu Trancoso",
+                address: "12 rue du Chevalier Roze, Marseille")
 
 partner5 = Partner.new(title: "Double Parfait pour l’Open Space",
                 description: "Marre des réunions qui auraient pu être des e-mails et des pauses café interminables?
@@ -76,7 +85,9 @@ partner5 = Partner.new(title: "Double Parfait pour l’Open Space",
                               Personne ne verra la différence, promis.
                               Toi, tu profites de ta journée, moi, je fais semblant de comprendre le dernier rapport trimestriel.",
                 price: 150,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Youssef Saroute",
+                address: "7 rue Nicolas Leblanc, Lille")
 
 partner6 = Partner.new(title: "Éclaireur de Date",
                 description: "Envie de filtrer les rencards foireux sans risquer ta soirée? J’y vais à ta place!
@@ -84,7 +95,9 @@ partner6 = Partner.new(title: "Éclaireur de Date",
                               Je gère les discussions gênantes et les silences longs pour te dire si ça vaut le coup.
                               Si tout est bon, je te passe le relai avec un rapport détaillé; sinon, tu te contentes de ma conclusion : 'fais-toi un bol de pâtes et oublie ça!'",
                 price: 250,
-                user_id: users.sample.id)
+                user_id: users.sample.id,
+                name: "Ilan Attia",
+                address: "70 rue Saint-Dizier, Nancy")
 
 
 partner1.image.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-UP3USJP7F-115d30a81011-512"), filename: "image1.jpg")

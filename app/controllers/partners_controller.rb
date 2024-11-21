@@ -4,9 +4,15 @@ class PartnersController < ApplicationController
   def index
     @partners = Partner.all
   end
+
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new
+    @marker = @partner.geocode
+      {
+        latitude: @partner.latitude,
+        longitude: @partner.longitude
+      }
   end
 
   def new
