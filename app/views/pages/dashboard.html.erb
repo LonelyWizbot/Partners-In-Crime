@@ -51,14 +51,34 @@
 
         </div>
 
-
       </div>
-
-
 
     </div>
 
     <div class="col-4 bg-white p-4 mt-4 d-flex align-items-center card shadow border-0 rounded-lg" style="border-radius: 32px; height: 300px">
+
+    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mes demandes de booking</h3>
+
+    <div class="my-3">
+          <div class="scrollable-div pe-3" style="max-height: 200px; overflow-y: scroll;">
+          <% @pending_bookings.each do |booking| %>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
+                <div>
+                  <%= link_to "Accepter", accept_partner_booking_path(booking.partner, booking),
+                  data: { turbo_method: :patch },
+                  class: "btn shadow-sm rounded-pill px-4",
+                  style: "background-color: #B197FC; color: white;" %>
+                  <%= link_to "Refuser", decline_partner_booking_path(booking.partner, booking),
+                  data: { turbo_method: :patch },
+                  class: "btn shadow-sm rounded-pill px-4",
+                  style: "background-color: #0d0c22; color: white;" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
 
     </div>
 
