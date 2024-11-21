@@ -8,3 +8,8 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "flatpickr" # @4.6.13
+pin "popmotion" # @11.0.5
+pin "framesync" # @6.1.2
+pin "hey-listen" # @1.0.8
+pin "style-value-types" # @5.1.2
+pin "tslib" # @2.4.0
