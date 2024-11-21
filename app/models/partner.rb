@@ -8,8 +8,10 @@ class Partner < ApplicationRecord
   validates :description, presence: true
   validates :image, presence: true
   validates :price, presence: true
+  validates :name, presence: true
 
   geocoded_by :address
+  validates :address, presence: true
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
