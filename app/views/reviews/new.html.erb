@@ -1,0 +1,30 @@
+<div class="container w-50 mt-4 p-4 shadow p-3 mb-5 bg-body rounded" style="background-color: #f8f9fa;">
+  <h2 class="forms-title text-center mb-4" style="color: #333;">Ajoutez un avis</h2>
+
+  <%= simple_form_for([@partner, @review]) do |f| %>
+
+    <div class="mb-3">
+      <%= f.input :comment, label: "Comment", input_html: { class: 'form-control shadow-sm rounded' } %>
+    </div>
+
+    <div class="mb-3">
+      <label for="rating" class="form-label">Note</label>
+      <div class="d-flex">
+        <% (1..5).each do |rating_value| %>
+          <div class="rating-option" style="margin-right: 10px; text-align: center;">
+            <%= f.radio_button :rating, rating_value, id: "rating_#{rating_value}", class: "rating-radio" %>
+            <label for="rating_#{rating_value}" class="rating-label" style="font-size: 16px; cursor: pointer; display: inline-block; padding: 8px;">
+              <%= rating_value %>
+            </label>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+      <%= link_to 'Annuler', partner_path(@partner), class: "btn shadow-sm rounded-pill px-4 me-2", style: "background-color: #cdcdcd; color: white;" %>
+      <%= f.submit 'Créer', class: 'btn shadow-sm rounded-pill px-4', style: 'background-color: #B197FC; color: white;' %>
+    </div>
+
+  <% end %>
+</div>

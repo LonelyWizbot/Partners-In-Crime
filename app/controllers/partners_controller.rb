@@ -8,13 +8,14 @@ class PartnersController < ApplicationController
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new
+    @review = Review.find(params[:review_id]) if params[:review_id]
     @marker = [{
       latitude: @partner.latitude,
       longitude: @partner.longitude,
       partner: {
         title: @partner.title,
         price: @partner.price,
-        url: partner_path(@partner)  # Use the partner's URL for the "En savoir plus" link
+        url: partner_path(@partner)
       }
     }]
   end
@@ -57,5 +58,9 @@ class PartnersController < ApplicationController
 
   def strong_params
     params.require(:partner).permit(:title, :address, :description, :image, :price, :name)
+  end
+
+  def review_parmas
+    params.require(:review).permit(:comment, :partner_id)
   end
 end
