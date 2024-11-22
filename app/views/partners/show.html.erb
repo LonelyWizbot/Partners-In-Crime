@@ -4,7 +4,7 @@
   border-radius: 10px">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= image_tag @partner.image, alt: "Partner", width: 400, class:"image-centrale" %>
+        <%= cl_image_tag partner.image.key, alt: "Partner", width: 400, class:"image-centrale" %>
       </div>
       <div class="carousel-item">
         <img src="https://i.pinimg.com/control2/474x/73/c6/6a/73c66aaa605393d02c668889836aba34.jpg" alt="Second Slide" width=400 height=400>
