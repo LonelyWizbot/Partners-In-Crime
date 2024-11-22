@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :partners do
-    resources :reviews, only: %i[new create destroy]
+    resources :reviews, only: %i[index new create destroy]
     resources :bookings, only: %i[new create show] do
       member do
         patch :accept
