@@ -5,7 +5,7 @@ class Partner < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 600, too_long: "600 caractères maximum" }
   validates :image, presence: true
   validates :price, presence: true
   validates :name, presence: true
