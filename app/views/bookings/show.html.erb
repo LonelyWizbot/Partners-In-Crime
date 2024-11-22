@@ -29,8 +29,8 @@
   <div class="container bg-white p-4 card shadow border-0 rounded-lg" style="border-radius: 32px; height: 250px;">
     <div class="mb-4">
       <h3 class="mb-4">Vos détails de réservation</h3>
-      <p><strong>Date de début:</strong> <%= @booking.start_date %></p>
-      <p><strong>Date de fin:</strong> <%= @booking.end_date %></p>
+      <p><strong>Date de début:</strong> <%= @booking.start_date.strftime('%B %d, %Y') %></p>
+      <p><strong>Date de fin:</strong> <%= @booking.end_date.strftime('%B %d, %Y') %></p>
       <p>
         <strong>Prix total:</strong> <%= @booking.partner.price %>€ x
         <%= (@booking.end_date - @booking.start_date).to_i %> jours =
