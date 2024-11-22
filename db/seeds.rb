@@ -104,8 +104,8 @@ partners_data = [
   { partner: partner2, image_url: 'https://i.postimg.cc/zfRYrts3/0kgcu1dh9tcf22ouyr9umvcjtcs0.jpg', image_filename: 'image2.png' },
   { partner: partner3, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHLV9AQM-5d80c2f24c3e-512', image_filename: 'image3.png' },
   { partner: partner4, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHR2QZS9-7c9461ea9b4d-512', image_filename: 'image4.png' },
-  { partner: partner5, image_url: 'https://ca.slack-edge.com/T02NE0241-U07Q6DY7JDV-248edbfd1dc2-512', image_filename: 'image5.png' },
-  { partner: partner6, image_url: 'https://ca.slack-edge.com/T02NE0241-U01HQ8S07RC-492a348bec10-512', image_filename: 'image6.png' }
+  { partner: partner5, image_url: 'https://ca.slack-edge.com/T02NE0241-U07Q6DY7JDV-248edbfd1dc2-512', image_filename: 'image5.png' }
+  # { partner: partner6, image_url: 'https://ca.slack-edge.com/T02NE0241-U01HQ8S07RC-492a348bec10-512', image_filename: 'image6.png' }
 ]
 
 partners_data.each do |data|
@@ -119,6 +119,6 @@ partner2.save!
 partner3.save!
 partner4.save!
 partner5.save!
-partner6.save!
+# partner6.save!
 
 puts "Seeding complete! Created #{User.count} users and #{Partner.count} partners"
