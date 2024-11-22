@@ -13,7 +13,7 @@
       <h3 class="mb-4"><%= @booking.partner.title %></h3>
       <div class="d-flex align-items-start">
         <div>
-          <%= image_tag @booking.partner.image, alt: "Le Wagon", class: "img-fluid shadow", style: "border-radius: 16px; width: 150px; height: 150px; object-fit: cover;" %>
+          <%= cl_image_tag @booking.partner.image.key, alt: "Le Wagon", class: "img-fluid shadow", style: "border-radius: 16px; width: 150px; height: 150px; object-fit: cover;" %>
         </div>
         <div class="ms-4">
           <div>

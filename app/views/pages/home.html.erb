@@ -35,7 +35,7 @@
           style="border-radius: 32px; height: 430px; width: 330px">
           <div class="col-lg-3 col-md-6 col-12 bg-white m-3 d-flex align-items-center card"
             style="border-color: white; border-radius: 22px; width: 300px; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center;">
-            <%= image_tag partner.image, alt: "Le Wagon", height: 300, width: 300, class: "partner-avatar"  %>
+            <%= cl_image_tag partner.image.key, alt: "Le Wagon", height: 300, width: 300, class: "partner-avatar"  %>
           </div>
           <div style="width: 280px">
             <div class="card-partners">
