@@ -89,15 +89,15 @@ partner5 = Partner.new(title: "Double pour l’Open Space",
                 name: "Youssef Saroute",
                 address: "7 rue Nicolas Leblanc, Lille")
 
-partner6 = Partner.new(title: "Déménageur remplaçant",
-                description: "Assez de te coincer le dos à porter le canapé de ton pote ? Laisse-moi faire !
-                              Je me pointe, je sue, je râle un peu pour l'ambiance, et je sors des blagues douteuses pour détendre l'atmosphère.
-                              Cartons, meubles qui ne passent jamais la porte, tout ça, c’est mon job.
-                              Toi, tu restes peinard et tu profites de ta journée sans crainte du 'tu m'aides à porter le frigo ?'",
-                price: 300,
-                user_id: users.sample.id,
-                name: "Mathieu Trancoso",
-                address: "12 rue du Chevalier Roze, Marseille")
+# partner6 = Partner.new(title: "Déménageur remplaçant",
+#                 description: "Assez de te coincer le dos à porter le canapé de ton pote ? Laisse-moi faire !
+#                               Je me pointe, je sue, je râle un peu pour l'ambiance, et je sors des blagues douteuses pour détendre l'atmosphère.
+#                               Cartons, meubles qui ne passent jamais la porte, tout ça, c’est mon job.
+#                               Toi, tu restes peinard et tu profites de ta journée sans crainte du 'tu m'aides à porter le frigo ?'",
+#                 price: 300,
+#                 user_id: users.sample.id,
+#                 name: "Mathieu Trancoso",
+#                 address: "12 rue du Chevalier Roze, Marseille")
 
 partners_data = [
   { partner: partner1, image_url: 'https://ca.slack-edge.com/T02NE0241-UP3USJP7F-115d30a81011-512', image_filename: 'image1.png' },
