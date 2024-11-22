@@ -8,11 +8,15 @@ class PartnersController < ApplicationController
   def show
     @partner = Partner.find(params[:id])
     @booking = Booking.new
-    @marker =
-      [{
-        latitude: @partner.latitude,
-        longitude: @partner.longitude
-      }]
+    @marker = [{
+      latitude: @partner.latitude,
+      longitude: @partner.longitude,
+      partner: {
+        title: @partner.title,
+        price: @partner.price,
+        url: partner_path(@partner)  # Use the partner's URL for the "En savoir plus" link
+      }
+    }]
   end
 
   def new

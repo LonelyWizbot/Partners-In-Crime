@@ -16,8 +16,13 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
-    this.#addMarkersToMap();
-    this.#fitMapToMarkers();
+    // Add markers and fit map bounds based on passed markers
+    if (this.markerValue.length > 0) {
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
+    } else {
+      console.log("No markers available");
+    }
   }
 
   #addMarkersToMap() {
