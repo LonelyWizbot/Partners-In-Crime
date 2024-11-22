@@ -69,15 +69,15 @@ partner3 = Partner.new(title: "Candidat à louer",
                 name: "Léa Alcou",
                 address: "46 rue de la Rousselle, Bordeaux")
 
-partner4 = Partner.new(title: "Déménageur remplaçant",
-                description: "Assez de te coincer le dos à porter le canapé de ton pote ? Laisse-moi faire !
-                              Je me pointe, je sue, je râle un peu pour l'ambiance, et je sors des blagues douteuses pour détendre l'atmosphère.
-                              Cartons, meubles qui ne passent jamais la porte, tout ça, c’est mon job.
-                              Toi, tu restes peinard et tu profites de ta journée sans crainte du 'tu m'aides à porter le frigo ?'",
-                price: 300,
+partner4 = Partner.new(title: "Éclaireur de Date",
+                description: "Envie de filtrer les rencards foireux sans risquer ta soirée? J’y vais à ta place !
+                            Je scrute les signes d'alerte : discours bizarre, longues histoires d’ex, et poils suspects.
+                            Je gère les discussions gênantes et les silences longs pour te dire si ça vaut le coup.
+                            Si tout est bon, je te passe le relai avec un rapport détaillé; sinon, tu te contentes de ma conclusion : 'fais-toi un bol de pâtes et oublie ça !'",
+                price: 250,
                 user_id: users.sample.id,
-                name: "Mathieu Trancoso",
-                address: "12 rue du Chevalier Roze, Marseille")
+                name: "Ilan Attia",
+                address: "70 rue Saint-Dizier, Nancy")
 
 partner5 = Partner.new(title: "Double pour l’Open Space",
                 description: "Marre des réunions qui auraient pu être des e-mails et des pauses café interminables ?
@@ -89,23 +89,23 @@ partner5 = Partner.new(title: "Double pour l’Open Space",
                 name: "Youssef Saroute",
                 address: "7 rue Nicolas Leblanc, Lille")
 
-partner6 = Partner.new(title: "Éclaireur de Date",
-                description: "Envie de filtrer les rencards foireux sans risquer ta soirée? J’y vais à ta place !
-                              Je scrute les signes d'alerte : discours bizarre, longues histoires d’ex, et poils suspects.
-                              Je gère les discussions gênantes et les silences longs pour te dire si ça vaut le coup.
-                              Si tout est bon, je te passe le relai avec un rapport détaillé; sinon, tu te contentes de ma conclusion : 'fais-toi un bol de pâtes et oublie ça !'",
-                price: 250,
+partner6 = Partner.new(title: "Déménageur remplaçant",
+                description: "Assez de te coincer le dos à porter le canapé de ton pote ? Laisse-moi faire !
+                              Je me pointe, je sue, je râle un peu pour l'ambiance, et je sors des blagues douteuses pour détendre l'atmosphère.
+                              Cartons, meubles qui ne passent jamais la porte, tout ça, c’est mon job.
+                              Toi, tu restes peinard et tu profites de ta journée sans crainte du 'tu m'aides à porter le frigo ?'",
+                price: 300,
                 user_id: users.sample.id,
-                name: "Ilan Attia",
-                address: "70 rue Saint-Dizier, Nancy")
+                name: "Mathieu Trancoso",
+                address: "12 rue du Chevalier Roze, Marseille")
 
 partners_data = [
   { partner: partner1, image_url: 'https://ca.slack-edge.com/T02NE0241-UP3USJP7F-115d30a81011-512', image_filename: 'image1.png' },
-  { partner: partner2, image_url: 'https://i.pinimg.com/control2/736x/2a/91/bd/2a91bdcf5e0a15e5cdb7932660d325ec.jpg', image_filename: 'image2.png' },
+  { partner: partner2, image_url: 'https://i.postimg.cc/zfRYrts3/0kgcu1dh9tcf22ouyr9umvcjtcs0.jpg', image_filename: 'image2.png' },
   { partner: partner3, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHLV9AQM-5d80c2f24c3e-512', image_filename: 'image3.png' },
-  { partner: partner4, image_url: 'https://ca.slack-edge.com/T02NE0241-U01HQ8S07RC-492a348bec10-512', image_filename: 'image4.png' },
+  { partner: partner4, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHR2QZS9-7c9461ea9b4d-512', image_filename: 'image4.png' },
   { partner: partner5, image_url: 'https://ca.slack-edge.com/T02NE0241-U07Q6DY7JDV-248edbfd1dc2-512', image_filename: 'image5.png' },
-  { partner: partner6, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHR2QZS9-7c9461ea9b4d-512', image_filename: 'image6.png' }
+  { partner: partner6, image_url: 'https://ca.slack-edge.com/T02NE0241-U01HQ8S07RC-492a348bec10-512', image_filename: 'image6.png' }
 ]
 
 partners_data.each do |data|
