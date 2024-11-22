@@ -101,7 +101,7 @@ partner6 = Partner.new(title: "Éclaireur de Date",
 
 partners_data = [
   { partner: partner1, image_url: 'https://ca.slack-edge.com/T02NE0241-UP3USJP7F-115d30a81011-512', image_filename: 'image1.png' },
-  { partner: partner2, image_url: 'https://i.pinimg.com/control2/736x/2a/91/bd/2a91bdcf5e0a15e5cdb7932660d325ec.jpg', image_filename: 'image2.png' },
+  { partner: partner2, image_url: 'https://i.postimg.cc/zfRYrts3/0kgcu1dh9tcf22ouyr9umvcjtcs0.jpg', image_filename: 'image2.png' },
   { partner: partner3, image_url: 'https://ca.slack-edge.com/T02NE0241-U07QHLV9AQM-5d80c2f24c3e-512', image_filename: 'image3.png' },
   { partner: partner4, image_url: 'https://ca.slack-edge.com/T02NE0241-U01HQ8S07RC-492a348bec10-512', image_filename: 'image4.png' },
   { partner: partner5, image_url: 'https://ca.slack-edge.com/T02NE0241-U07Q6DY7JDV-248edbfd1dc2-512', image_filename: 'image5.png' },
