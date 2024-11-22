@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="partner-card mt-3">
+      <% @partner.reviews.each do |review| %>
+        <div class="review-card mb-3 p-3 shadow-sm rounded" style="background-color: #f9f9f9;">
+          <strong><%= review.user.first_name %></strong>
+
+          <!-- Display the rating (note) here -->
+          <div class="rating-display mb-2">
+            <% (1..5).each do |i| %>
+              <i class="fa fa-star <%= 'text-warning' if i <= review.rating %>"></i>
+            <% end %>
+            <span class="ms-2"><%= review.rating %>/5</span> <!-- Display the numeric rating -->
+          </div>
+
+          <p><%= review.comment %></p>
+          <small class="text-muted"><%= review.created_at.strftime('%B %d, %Y') %></small>
+        </div>
+      <% end %>
+
+      <% if @partner.reviews.empty? %>
+        <p class="text-muted">Aucun avis pour le moment. Soyez le premier à en ajouter un !</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>

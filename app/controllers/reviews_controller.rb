@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def index
+    @partner = Partner.find(params[:partner_id])
+    @reviews = @partner.reviews
+  end
+
   def new
     @partner = Partner.find(params[:partner_id])
     @review = Review.new
