@@ -1,7 +1,11 @@
 <div class="container w-50">
 
-  <div class="container p-2 mt-3 mb-3 text-center">
+  <div class="container p-2 mt-3 mb-1 text-center">
     <h1>Demande de réservation</h1>
+  </div>
+
+  <div class="my-4 d-flex justify-content-center">
+    <%= link_to "Mon tableau de bord", dashboard_path, class: "btn shadow-sm rounded-pill px-4", style: "background-color: #997af4; color: white;" %>
   </div>
 
   <div class="container bg-white p-4 mb-4 d-flex flex-column flex-md-row card shadow border-0 rounded-lg" style="border-radius: 32px; height: 275px;">
@@ -45,5 +49,6 @@
       <% end %>
     </div>
   </div>
+
 
 </div>

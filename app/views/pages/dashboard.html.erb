@@ -107,13 +107,15 @@
                 <% end %>
               </div>
               <div>Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
-              <% if booking.status == "accepted" %>
-                <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
-              <% elsif booking.status == "denied" %>
-                <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
-              <% else %>
-                <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
-              <% end %>
+              <div>
+                <% if booking.status == "accepted" %>
+                  <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
+                <% elsif booking.status == "denied" %>
+                  <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
+                <% else %>
+                  <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
