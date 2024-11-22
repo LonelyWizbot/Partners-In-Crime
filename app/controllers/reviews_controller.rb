@@ -5,10 +5,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @review = Review.new(review_params)
     @partner = Partner.find(params[:partner_id])
-    @review = @partner.review.new(review_params)
+    @review.partner = @partner
+    @review.user = current_user
     if @review.save
-      redirect_to partner_path(@partner)
+      redirect_to partner_path(@partner), notice: 'Review created successfully!'
     else
       render :new, status: :unprocessable_entity
     end
@@ -17,12 +19,12 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to @review.partner, notice: "Bookmark was successfully deleted."
+    redirect_to @review.partner, notice: "Review was successfully deleted."
   end
 
   private
 
-  def review_parmas
-    params.require(:review).permit(:comment, :partner_id)
+  def review_params
+    params.require(:review).permit(:comment, :rating, :partner_id, :user_id)
   end
 end
