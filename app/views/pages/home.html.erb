@@ -2,10 +2,16 @@
   <div class="row">
     <div class="home col d-flex flex-column justify-content-center">
       <div class="ms-2">
-        <h3>Soyons honnêtes, vous avez mieux à faire que... <span id="replace-me" style="color: #b197fc"></span></h3>
-        <p>Welcome!</p>
+          <h3>Soyons honnêtes, vous avez mieux à faire que... <span id="replace-me" style="color: #b197fc"></span></h3>
+          <p>Bienvenue !</p>
       </div>
       <div class="d-flex">
+
+    <div class="ms-2 mb-5" data-controller="text-animation">
+        <h3>Soyons honnêtes, vous avez mieux à faire que...</h3>
+        <h2 data-text-animation-target="text"style="color: #b197fc"></h2>
+    </div>
+    <div class="d-flex">
         <div class="d-flex" id="btn-discover">
           <a href="#partners" class="btn btn-home">Découvrez</a>
         </div>
@@ -42,7 +48,7 @@
             </div>
             <div>
               <a href="<%= partner_path(partner) %>">
-                <button type="button" class="btn-login btn btn-primary btn-sm position-absolute bottom-0 end-0 me-4 mb-3">En savoir plus</button>
+              <button type="button" class="btn-login btn btn-primary btn-sm position-absolute bottom-0 end-0 me-4 mb-3">Voir plus</button>
               </a>
             </div>
           </div>
