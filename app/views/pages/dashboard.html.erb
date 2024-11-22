@@ -14,7 +14,7 @@
           <div class="ms-4">
             <p class="mb-2"><strong>Nom : </strong><%= current_user.first_name %> <%= current_user.last_name %></p>
             <p class="mb-2"><strong>Adresse : </strong><%= current_user.address %>, <%= current_user.additional_address %><%= current_user.zip_code %>, <%= current_user.city %></p>
-            <p class="mb-2"><strong>E-mail: </strong><%= current_user.email %></p>
+            <p class="mb-2"><strong>E-mail : </strong><%= current_user.email %></p>
             <p class="mb-2"><strong>Téléphone : </strong><%= current_user.phone_number %></p>
           </div>
         </div>
@@ -111,7 +111,7 @@
             <% end %>
           </div>
           <div class="text-start mx-3" style="width: 100px; text-align: left; font-family: Archivo, sans-serif;">
-            Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong>
+            Total : <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong>
           </div>
           <div class="text-end ms-2" style="width: 150px; text-align: left;">
             <% if booking.status == "accepted" %>
@@ -144,7 +144,7 @@
               <% else %>
                 <%= "#{booking.start_date.strftime('%d-%b')}-#{booking.end_date.strftime('%d-%b')}" %>
               <% end %></div>
-            <div style="font-family: Archivo, sans-serif;"> Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
+            <div style="font-family: Archivo, sans-serif;"> Total : <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
           </div>
         <% end %>
       </div>
