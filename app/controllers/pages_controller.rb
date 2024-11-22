@@ -6,6 +6,18 @@ class PagesController < ApplicationController
     if params[:query].present?
       @partners = @partners.search_by_title_and_description(params[:query])
     end
+
+    @markers = @partners.map do |partner|
+      {
+        latitude: partner.latitude,
+        longitude: partner.longitude,
+        partner: {
+          title: partner.title,
+          price: partner.price.to_i,
+          url: "/partners/#{partner.id}"
+        }
+      }
+    end
   end
 
   def dashboard

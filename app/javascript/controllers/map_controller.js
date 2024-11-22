@@ -9,24 +9,42 @@ export default class extends Controller {
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
-    })
+    });
+
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
   }
+
   #addMarkersToMap() {
-    this.markerValue
+    this.markerValue.forEach((marker) => {
+      // Create a popup with partner information
+      const popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`
+          <div style="max-width: 200px;">
+            <h5>${marker.partner.title}</h5>
+            <p>${marker.partner.price}€</p>
+            <a href="${marker.partner.url}" class="btn btn-primary btn-sm">En savoir plus</a>
+          </div>
+        `);
+
+      // Add the marker with the popup
       new mapboxgl.Marker()
-        .setLngLat([ this.markerValue[1], this.markerValue[0] ])
-        .addTo(this.map)
+        .setLngLat([marker.longitude, marker.latitude])
+        .setPopup(popup) // Attach the popup to the marker
+        .addTo(this.map);
+    });
   }
+
   #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([ this.markerValue[1], this.markerValue[0] ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    const bounds = new mapboxgl.LngLatBounds();
+    this.markerValue.forEach(marker => {
+      bounds.extend([marker.longitude, marker.latitude]);
+    });
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 }
