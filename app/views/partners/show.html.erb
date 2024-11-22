@@ -23,24 +23,24 @@
   </div>
 
   <!-- Cards Section -->
-  <div class="aligned-card-container">
+  <div class="partner-card aligned-card-container">
     <!-- Title Card -->
     <div class="title-card">
       <div class="flat-show-card">
-        <h1 class="fw-bold pb-4 border-bottom"><%= @partner.title %></h1>
-        <h3 class="title-purple mt-4 mb-3">A bit more about this partner...</h3>
+        <h1 class="fw-bold pb-4 mt-1 border-bottom"><%= @partner.title %></h1>
+        <h3 class="title-purple mt-4 mb-4">Découvrez-en un peu plus sur ce Partner...</h3>
         <div class="d-flex">
-        <i class="fa-regular fa-circle-user fa-2xl" style="color: #000000;"></i>
-        <p class="fw-bold"><%= @partner.name %></p>
+        <i class="fa-regular fa-circle-user fa-2xl mt-3 me-3" style="color: #000000;"></i>
+        <h5 class="fw-bold mt-2"><%= @partner.name %></h5>
         </div>
-        <p class="descripton mt-3"><%= @partner.description %></p>
+        <p class="mt-3"><%= @partner.description %></p>
       </div>
     </div>
 
     <!-- Partner Up Card -->
     <div class="partner-up-card" data-controller="calcul-dates">
       <div class="card-body">
-        <h5 class="card-title fw-bold mb-3">Partner up!</h5>
+        <h5 class="form-booking card-title fw-bold mb-3 text-center">Partner up!</h5>
         <div class="mt-4">
           <%= simple_form_for ([@partner, @booking]) do |f|%>
             <div class="form-input">
@@ -65,14 +65,14 @@
         </div>
 
         <div class="flat-show-card d-flex justify-content-between">
-          <h5 class="fw-bold">Détail</h5>
+          <h5 class="form-booking fw-bold">Détail</h5>
           <div class="d-flex gap-1">
             <p data-calcul-dates-target="fixedPrice"><%= @partner.price.to_i %>€ x</p>
             <p data-calcul-dates-target="totalDate"> 0 jour</p>
           </div>
         </div>
         <div class="border-top mt-3 pt-3 d-flex justify-content-between">
-          <h5 class="fw-bold">Total</h5>
+          <h5 class="form-booking fw-bold">Total</h5>
             <p data-calcul-dates-target="pricing">0€</p>
         </div>
       </div>
