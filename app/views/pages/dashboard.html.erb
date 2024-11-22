@@ -92,35 +92,41 @@
   <div class="row gap-3 d-flex flex-nowrap">
 
     <div class="col-7 bg-white p-4 mt-3 d-flex card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px;">
-    <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mon historique de bookings</h3>
+  <h3 class="w-100 w-md-50 mb-3 mb-md-0">Mon historique de bookings</h3>
 
-      <div class="my-3">
-        <div class="scrollable-div pe-3" style="height: 250px; overflow-y: scroll; padding-top: 10px; margin-bottom: 16px">
-          <% @booking_requests.each do |booking| %>
-            <div class="d-flex align-items-start justify-content-between mb-3">
-              <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
-              <div>
-                <% if booking.start_date.month == booking.end_date.month %>
-                  <%= "#{booking.start_date.strftime('%d')}-#{booking.end_date.strftime('%d %b')}" %>
-                <% else %>
-                  <%= "#{booking.start_date.strftime('%d-%b')}-#{booking.end_date.strftime('%d-%b')}" %>
-                <% end %>
-              </div>
-              <div>Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
-              <div>
-                <% if booking.status == "accepted" %>
-                  <p><strong>Statut: </strong><span class="accepted_alert ">Accepté</span></p>
-                <% elsif booking.status == "denied" %>
-                  <p><strong>Statut: </strong><span class="denied_alert">Refusé</span></p>
-                <% else %>
-                  <p><strong>Statut: </strong><span class="pending_alert">En attente</span></p>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
+  <div class="my-3">
+    <div class="scrollable-div pe-3" style="height: 250px; overflow-y: scroll; padding-top: 10px; margin-bottom: 16px;">
+      <% @booking_requests.each do |booking| %>
+        <div class="d-flex mb-3">
+          <div class="flex-grow-1 mx-3" style="width: 100px; text-align: left;">
+            <strong>
+              <%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black;" %>
+            </strong>
+          </div>
+          <div class="text-start mx-3" style="width: 100px; text-align: left;">
+            <% if booking.start_date.month == booking.end_date.month %>
+              <%= "#{booking.start_date.strftime('%d')}-#{booking.end_date.strftime('%d %b')}" %>
+            <% else %>
+              <%= "#{booking.start_date.strftime('%d-%b')} - #{booking.end_date.strftime('%d-%b')}" %>
+            <% end %>
+          </div>
+          <div class="text-start mx-3" style="width: 100px; text-align: left;">
+            Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong>
+          </div>
+          <div class="text-end ms-2" style="width: 150px; text-align: left;">
+            <% if booking.status == "accepted" %>
+              <p><span class="accepted_alert">Accepté</span></p>
+            <% elsif booking.status == "denied" %>
+              <p><span class="denied_alert">Refusé</span></p>
+            <% else %>
+              <p><span class="pending_alert">En attente</span></p>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
+  </div>
+</div>
 
 
     <div class="col-5 bg-white p-4 mt-3 d-flex card shadow border-0 rounded-lg" style="border-radius: 32px; height: 350px; background: linear-gradient(#d3c3ff, #d2b3ff);">
