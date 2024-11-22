@@ -37,9 +37,9 @@
             <%= image_tag partner.image, alt: "Le Wagon", height: 300, width: 300, class: "partner-avatar"  %>
           </div>
           <div style="width: 280px">
-            <div>
+            <div class="card-partners">
               <p class="title"><%= partner.title %></p>
-              <h4 class="price-text" style="color: black;"><%= partner.price.to_i %>€</h4>
+              <h4 class="price-text"><%= partner.price.to_i %>€</h4>
             </div>
             <div>
               <a href="<%= partner_path(partner) %>">

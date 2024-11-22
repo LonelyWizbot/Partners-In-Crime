@@ -1,6 +1,6 @@
 <h3 class="m-2">Bienvenue <%= current_user.first_name %> !</h3>
 
-<div class="container">
+<div class="dashboard container">
 
   <div class="row gap-3 d-flex flex-nowrap">
 
@@ -40,7 +40,7 @@
           <div class="scrollable-div pe-3" style="max-height: 200px; overflow-y: scroll;">
           <% @partners.each do |partner| %>
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <div class=""><strong><%= link_to partner.title, partner_path(partner), style: "color: black" %></strong></div>
+                <div class=""><strong><%= link_to partner.title, partner_path(partner), style: "color: black; font-family: Archivo, sans-serif;" %></strong></div>
                 <div>
                   <%= link_to "Modifier", edit_partner_path(partner),
                   class: "btn btn-dashboard shadow-sm rounded-pill px-4",
@@ -68,7 +68,7 @@
           <div class="scrollable-div pe-3" style="max-height: 200px; overflow-y: scroll;">
           <% @pending_bookings.each do |booking| %>
               <div class="d-flex align-items-center justify-content-between mt-2">
-                <div class="me-3 mt-2"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
+                <div class="me-3 mt-2"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black; font-family: Archivo, sans-serif;" %></strong></div>
                 <div>
                   <%= link_to "Accepter", accept_partner_booking_path(booking.partner, booking),
                   data: { turbo_method: :patch },
@@ -98,19 +98,19 @@
     <div class="scrollable-div pe-3" style="height: 250px; overflow-y: scroll; padding-top: 10px; margin-bottom: 16px;">
       <% @booking_requests.each do |booking| %>
         <div class="d-flex mb-3">
-          <div class="flex-grow-1 mx-3" style="width: 100px; text-align: left;">
+          <div class="flex-grow-1 mx-3" style="width: 100px; text-align: left; font-family: Archivo Black, sans-serif, font-weight: 200, font-style: normal;">
             <strong>
-              <%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black;" %>
+              <%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black; font-family: Archivo, sans-serif;" %>
             </strong>
           </div>
-          <div class="text-start mx-3" style="width: 100px; text-align: left;">
+          <div class="text-start mx-3" style="width: 100px; text-align: left; font-family: Archivo, sans-serif;">
             <% if booking.start_date.month == booking.end_date.month %>
               <%= "#{booking.start_date.strftime('%d')}-#{booking.end_date.strftime('%d %b')}" %>
             <% else %>
               <%= "#{booking.start_date.strftime('%d-%b')} - #{booking.end_date.strftime('%d-%b')}" %>
             <% end %>
           </div>
-          <div class="text-start mx-3" style="width: 100px; text-align: left;">
+          <div class="text-start mx-3" style="width: 100px; text-align: left; font-family: Archivo, sans-serif;">
             Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong>
           </div>
           <div class="text-end ms-2" style="width: 150px; text-align: left;">
@@ -137,14 +137,14 @@
       <div class="scrollable-div pe-3" style="max-height: 250px; overflow-y: scroll;">
       <% @accepted_bookings.each do |booking| %>
           <div class="d-flex align-items-start justify-content-between mb-3">
-            <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black" %></strong></div>
-            <div>
+            <div class="me-3"><strong><%= link_to booking.partner.title, partner_booking_path(booking.partner, booking), class: "access-show", style: "color: black; font-family: Archivo, sans-serif;" %></strong></div>
+            <div style="font-family: Archivo, sans-serif;">
               <% if booking.start_date.month == booking.end_date.month %>
                 <%= "#{booking.start_date.strftime('%d')}-#{booking.end_date.strftime('%d %b')}" %>
               <% else %>
                 <%= "#{booking.start_date.strftime('%d-%b')}-#{booking.end_date.strftime('%d-%b')}" %>
               <% end %></div>
-            <div> Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
+            <div style="font-family: Archivo, sans-serif;"> Total: <strong><%= (booking.partner.price * (booking.end_date - booking.start_date)).to_i %>€</strong></div>
           </div>
         <% end %>
       </div>
