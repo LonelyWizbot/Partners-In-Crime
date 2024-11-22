@@ -43,7 +43,7 @@
             <% (1..5).each do |i| %>
               <i class="fa fa-star <%= 'text-warning' if i <= review.rating %>"></i>
             <% end %>
-            <span class="ms-2"><%= review.rating %>/5</span> <!-- Display the numeric rating -->
+            <span class="ms-2"><%= review.rating %>/5</span>
           </div>
             <p><%= review.comment %></p>
             <small class="text-muted"><%= review.created_at.strftime('%B %d, %Y') %></small>
