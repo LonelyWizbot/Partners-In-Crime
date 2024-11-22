@@ -41,6 +41,9 @@
 }
 .title-purple {
   color:#B197FC;
+  font-family: "Archivo", sans-serif;
+  font-size: 24px;
+
 }
 .aligned-card-container {
   display: flex;
@@ -82,8 +85,22 @@ h2 {
   font-family: "Archivok", sans-serif;
 }
 
-.description p {
+.partner-card {
   font-family: "Archivo", sans-serif;
   text-align: justify;
   line-height: 40px;
+}
+
+.form-booking {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.form-input {
+  font-family: "Archivo", sans-serif;
+}
+
+.form-actions {
+  font-family: "Archivo", sans-serif;
 }
